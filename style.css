@@ -6,14 +6,13 @@
     color: seashell;
 }
 
-html {
+body {
     background-color: black;
 }
 
 main {
     width: 100%;
     height: 100vh;
-    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +23,7 @@ main {
     overflow-x: hidden;
     max-width: 650px;
     width: 90%;
+    min-width: 250px;
     height: 500px;
     border: solid 1px white;
     flex-wrap: nowrap;
@@ -34,25 +34,39 @@ main {
 .container::before, .container::after {
     content: '';
     display: block;
-    min-width: 30%;
+    min-width: 25%;
     height: 100%;
     margin: 0;
     background-color: transparent;
 }
 
-.box {
-    display: block;
-    min-width: 30%;
-    height: 300px;
-    margin: 0;
-    background-color: bisque;
-    transition: all ease-in 200ms;
-    border: solid 2px black;
+.poke-box {
+    min-width: 25%;
     padding: 10px;
-    border-radius: 20px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-button {
+.poke-box.active {
+    min-width: 50%;
+    margin: 0;
+    padding: 10px;
+}
+
+.poke-item {
+    background-color: bisque;
+    border-radius: 20px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+}
+
+button.scroll-button {
     height: 100px;
     font-size: 60px;
     font-weight: bolder;
@@ -61,22 +75,11 @@ button {
     border: none;
 }
 
-/* 
-.box:nth-child(2){
-    background-color: #f00;
-}
-.box:nth-child(3){
-    background-color: #0f0;
-}
-.box:nth-child(4){
-    background-color: #00f;
-}
-*/
-
 .poke-name {
-    text-align: center;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: black;
+    margin: 20px 0px;
+    font-size: x-large;
 }
 
 .poke-img {
